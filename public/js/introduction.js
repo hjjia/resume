@@ -35,7 +35,7 @@ $(function () {
     // 监听滚动条
     // =============================
 
-    $(document).scroll(function () {
+   $(window).scroll(function () {
         slide(partArr)
     })
 
@@ -59,6 +59,7 @@ $(function () {
 
         if(current == 0){
             $(target).find(".slide-control[data-slide='prev']").addClass('disabled')
+            $(target).find(".slide-control[data-slide='next']").removeClass('disabled')
         }
         else if(current == pageSize-1){
             $(target).find(".slide-control[data-slide='next']").addClass('disabled')
@@ -67,6 +68,32 @@ $(function () {
             $(target).find(".slide-control[data-slide='prev']").removeClass('disabled')
             $(target).find(".slide-control[data-slide='next']").removeClass('disabled')
         }
+    })
+
+    var count     = 0
+    var swipePageId ;
+    var swipePage = function () {
+        swipePageId = setInterval(function () {
+
+            if(count == $('.box-circle').length){
+                count = 0;
+            }
+
+            var nextTem = ".box-circle[data-slide-to=count]"
+            var next    = nextTem.replace("count",count)
+
+            $(next).trigger('click')
+            count ++;
+
+        },3000)
+
+    }
+    swipePage()
+
+    $('#pages-list').on('mouseenter',function(){
+        clearInterval(swipePageId)
+    }).on('mouseleave',function(){
+        swipePage()
     })
 
 
@@ -107,6 +134,34 @@ $(function () {
         $('#leave-words').removeClass('active')
         $(this).parents('.popover').removeClass('active')
     })
+
+
+    // swipe demo 部分
+    // =============================
+
+    // 初始化，获取位置信息
+    var $demoList    = $("#demo .content .rotate-item")
+    var swipeDemo = function () {
+        $demoList.each(function () {
+            var $this = $(this)
+            if($this.hasClass('rotateA')){
+                $this.removeClass('rotateA')
+            }
+            else{
+                $this.addClass('rotateA')
+            }
+        })
+    }
+
+    swipeDemo();
+
+    $demoList.on('mouseenter',function(){
+        swipeDemo();
+    }).on('mouseleave',function(){
+        swipeDemo();
+    })
+
+
 })
 
 

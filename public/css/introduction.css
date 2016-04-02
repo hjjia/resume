@@ -738,6 +738,8 @@ body{
 }
 .contact-me .contact-text{
     padding-bottom: 40px;
+    font-size: 17px;
+    font-weight: bold;
 }
 .contact-me .content .basic .text{
     display: inline-block;

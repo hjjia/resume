@@ -73,19 +73,22 @@ $(function () {
     var count     = 0
     var swipePageId ;
     var swipePage = function () {
-        swipePageId = setInterval(function () {
+        if($(".slide .indicators li[data-target='experience']").hasClass('active')){
+            swipePageId = setInterval(function () {
 
-            if(count == $('.box-circle').length){
-                count = 0;
-            }
+                if(count == $('.box-circle').length){
+                    count = 0;
+                }
 
-            var nextTem = ".box-circle[data-slide-to=count]"
-            var next    = nextTem.replace("count",count)
+                var nextTem = ".box-circle[data-slide-to=count]"
+                var next    = nextTem.replace("count",count)
 
-            $(next).trigger('click')
-            count ++;
+                $(next).trigger('click')
+                count ++;
 
-        },3000)
+            },3000)
+        }
+
 
     }
     swipePage()
@@ -133,6 +136,13 @@ $(function () {
         e.stopPropagation()
         $('#leave-words').removeClass('active')
         $(this).parents('.popover').removeClass('active')
+    })
+
+    // 鼠标移开留言板时取消留言
+    $('.popover').on('mouseleave',function(){
+        $('#leave-words').removeClass('active')
+        $(this).removeClass('active')
+
     })
 
 

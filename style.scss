@@ -1,0 +1,876 @@
+@charset "utf-8";
+
+$defaultBg: #F4F7F8;
+$advanceBg: #fff;
+$defaultFontSize: 14px;
+$defaultFontColor: #333;
+$bodyColor: #F4C392;
+$borderColor: #ebebeb;
+$activeColor: #36B6E9;
+$navbarFontColor: #333;
+$tagColor: #999;
+$titleColor: #121212;
+$widthLeft: 21%;
+$widthRight: 19%;
+$widthCenter: 60%;
+
+$margin: 20px;
+$marginTop: 50px;
+
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+
+  font-size: $defaultFontSize;
+}
+
+body {
+  height: 100%;
+  line-height: 1.4;
+
+  color: $defaultFontColor;
+}
+
+a {
+  text-decoration: none;
+
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+@font-face{
+  font-family: 'FZXH';
+  src:url('fonts/FZXH.ttf')
+}
+
+body {
+  font-family: 'FZXH';
+}
+
+@font-face {font-family: "iconfont";
+  src: url('http://at.alicdn.com/t/font_i4senmy292uik9.eot?t=1478423854582'); /* IE9*/
+  src: url('http://at.alicdn.com/t/font_i4senmy292uik9.eot?t=1478423854582#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('http://at.alicdn.com/t/font_i4senmy292uik9.woff?t=1478423854582') format('woff'), /* chrome, firefox */
+  url('http://at.alicdn.com/t/font_i4senmy292uik9.ttf?t=1478423854582') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('http://at.alicdn.com/t/font_i4senmy292uik9.svg?t=1478423854582#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.icon {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon {
+  &.icon-link:before { content: "\e63e"; }
+
+  &.icon-github:before { content: "\e69f"; }
+
+  &.icon-blog:before { content: "\e60f"; }
+
+  &.icon-circle-arrow-left:before { content: "\e611"; }
+
+  &.icon-circle-arrow-right:before { content: "\e619"; }
+
+  &.icon-bullets:before { content: "\e710"; }
+
+  &.icon-project-bullets:before { content: "\e726"; }
+
+  &.icon-plugin:before { content: "\e719"; }
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.list-inline {
+  list-style: none;
+
+  .list-item {
+    display: inline-block;
+  }
+}
+
+.view {
+  position: relative;
+
+  padding-top: $marginTop;
+  padding-bottom: $marginTop;
+  width: 100%;
+  min-height: 100%;
+
+  background-color: $bodyColor;
+
+  .pages {
+    position: relative;
+
+    margin: 0 auto;
+
+    width: 1200px;
+    min-height: 100%;
+
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+
+    background-color: $defaultBg;
+
+    &:after {
+      display: block;
+      clear: both;
+
+      content: '';
+    }
+
+    .header {
+      width: 100%;
+      height: 50px;
+
+      background-color: $advanceBg;
+
+      .left {
+        display: inline-block;
+        float: left;
+
+        width: $widthLeft;
+        height: 100%;
+
+        .title-wrap {
+          display: inline-block;
+
+          margin-left: $margin;
+          margin-right: $margin;
+          padding-right: 15px;
+
+          height: 100%;
+
+          font-weight: bold;
+          line-height: 50px;
+
+          border-right: 1px solid $borderColor;
+
+          .title {
+            border-radius: 5px;
+
+            padding: 5px;
+
+            color: #fff;
+            background-color: $activeColor;
+          }
+        }
+      }
+
+      .center {
+        display: inline-block;
+        float: left;
+
+        width: 60%;
+        height: 100%;
+
+        .center-inner {
+          margin: 0 $margin;
+          height: 100%;
+
+          border-left: 1px solid $borderColor;
+          border-right: 1px solid $borderColor;
+          text-align: center;
+
+          .list-inline {
+            .list-item {
+              .item-content {
+                padding-left: $margin;
+                padding-right: $margin;
+                height: 50px;
+                line-height: 50px;
+                font-size: 16px;
+
+                color: $titleColor;
+              }
+
+              &.active,
+              &:hover {
+                .item-content {
+                  color: $activeColor;
+                }
+              }
+            }
+          }
+
+        }
+      }
+
+      .right {
+        display: inline-block;
+        float: left;
+
+        width: $widthRight;
+        height: 100%;
+      }
+    }
+
+    .navbar {
+      width: 100%;
+      height: 35px;
+
+      border-top: 1px solid $borderColor;
+      border-bottom: 1px solid $borderColor;
+      box-shadow: 0 3px 3px #eee;
+
+      font-size: 14px;
+
+      background-color: $advanceBg;
+
+      .list-inline {
+        list-style: none;
+
+        margin-left: $margin;
+
+        color: #666;
+
+        .list-item {
+          display: inline-block;
+
+          cursor: pointer;
+
+          .item-content {
+            display: block;
+
+            text-decoration: none;
+
+            height: 35px;
+            line-height: 35px;
+
+            padding: 0 10px;
+          }
+
+          &.active {
+
+            color: $navbarFontColor;
+
+            .item-content {
+              border-bottom: 2px solid $activeColor;
+            }
+          }
+
+          &:hover {
+            color: $navbarFontColor;
+          }
+        }
+      }
+    }
+
+    .main {
+      margin-top: $margin;
+      padding-bottom: $margin;
+      min-height: 500px;
+
+      &:after {
+        display: block;
+        clear: both;
+
+        content: '';
+      }
+
+      .left {
+        display: inline-block;
+        float: left;
+
+        width: $widthLeft;
+
+        .left-inner {
+          margin-left: $margin;
+          padding-top: $margin;
+
+          background-color: $advanceBg;
+
+          .icon {
+            font-size: 12px;
+          }
+
+          .img-panel {
+            text-align: center;
+
+            width: 120px;
+            margin: 0 auto;
+            padding-bottom: $margin;
+
+            .img-wrap {
+              position: relative;
+              overflow: hidden;
+
+              margin: 0 auto $margin;
+
+              width: 80px;
+              height: 80px;
+
+              border-radius: 50%;
+              border: 1px solid $borderColor;
+
+              img {
+                width: 100%;
+                height: auto;
+              }
+
+            }
+
+            .name-wrap {
+              .name {
+                color: $titleColor;
+              }
+
+              padding-bottom: $margin;
+            }
+
+            .btn-wrap {
+              .btn {
+                display: block;
+
+                border-radius: 50px;
+                width: 100%;
+                //height: 34px;
+                //line-height: 32px;
+
+                text-align: center;
+
+                background-color: #fff;
+
+                cursor: pointer;
+
+                &.btn-primary {
+                  border: 1px solid $activeColor;
+
+                  color: $activeColor;
+
+                  &.active,
+                  &:hover {
+                    background-color: $activeColor;
+                    color: #fff;
+                  }
+                }
+
+                & + .btn {
+                  margin-top: 8px;
+                }
+              }
+            }
+          }
+
+          .list-wrap {
+            border-top: 1px solid $borderColor;
+            border-bottom: 1px solid $borderColor;
+
+            &:last-child {
+              border-bottom: none;
+            }
+
+            & + .list-wrap {
+              border-top: none;
+            }
+
+            .list-2 {
+              .list-item {
+                border-right: 1px solid $borderColor;
+
+                text-align: center;
+
+                &:last-child {
+                  border-right: none;
+                }
+
+                .item-content {
+                  display: block;
+
+                  padding-top: 10px;
+                  padding-bottom: 10px;
+
+                  .title {
+                    color: $titleColor;
+                  }
+
+                  .text {
+                    font-size: 12px;
+
+                    color: $tagColor;
+                  }
+                }
+              }
+            }
+
+            .list-block {
+              list-style: none;
+
+              padding-left: $margin;
+              padding-right: $margin;
+
+              .list-item {
+                .item-content {
+                  padding-top: 10px;
+                  padding-bottom: 10px;
+
+                  .single-line {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+
+                    font-size: 12px;
+                    line-height: 1.8;
+
+                    color: $tagColor;
+
+                    .icon {
+                      margin-right: 5px;
+                    }
+
+                    .link {
+                      &:hover {
+                        color: $defaultFontColor;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+          }
+        }
+      }
+
+      .center {
+        display: inline-block;
+        float: left;
+
+        width: 60%;
+
+        .center-inner {
+          margin: 0 $margin;
+
+          .panel {
+            padding-left: $margin;
+            padding-right: $margin;
+            padding-bottom: $margin;
+
+            background-color: $advanceBg;
+
+            .title-wrap {
+              border-bottom: 1px solid $borderColor;
+
+              height: 40px;
+              line-height: 40px;
+
+              color: $titleColor;
+
+              .title {
+                margin: 0;
+
+                font-weight: normal;
+                font-size: 16px;
+
+                .tag {
+                  padding-right: 10px;
+                  font-size: 12px;
+
+                  color: #666;
+                }
+
+              }
+
+              .title-after {
+                float: right;
+
+                height: 40px;
+                line-height: 40px;
+              }
+            }
+
+            & + .panel {
+              margin-top: $margin;
+            }
+
+            .panel-inner {
+              padding-top: $margin;
+            }
+
+            /* 专业技能 */
+            .skills-wrap {
+              .list-block {
+                .list-item {
+
+                  line-height: 1.6;
+
+                  & + .list-item {
+                    margin-top: 15px;
+                  }
+
+                  .item-content {
+                    display: table-row;
+
+                    .icon {
+                      display: table-cell;
+
+                      padding-left: 4px;
+                      width: 28px;
+
+                      font-size: 12px;
+
+                      color: #999;
+
+                    }
+
+                    .skill-text {
+                      display: table-cell;
+                      white-space: normal;
+                      word-break: break-all;
+                    }
+                  }
+                }
+              }
+            }
+            /* 专业技能 END */
+
+            /* 项目描述 */
+            .project-wrap {
+              > .list-block {
+                >.list-item {
+
+                  &.active {
+                    >.item-content {
+                      &:before {
+                        display: none;
+                      }
+
+                      .left {
+                        top: 24px;
+                        left: 9px;
+
+                        border: 2px solid $activeColor;
+                        width: 12px;
+                        height: 12px;
+
+                        background-color: $advanceBg;
+                      }
+                    }
+                  }
+
+                  &:last-child {
+                    >.item-content {
+                      .content-inner {
+                        border-bottom: none;
+                      }
+                    }
+                  }
+
+                  >.item-content {
+                    position: relative;
+
+                    &:before {
+                      display: block;
+                      position: absolute;
+                      content: '';
+
+                      top: 0;
+                      left: 14px;
+
+                      width: 2px;
+                      height: 24px;
+
+                      background-color: #ccc;
+                    }
+
+                    &:after {
+                      display: block;
+                      position: absolute;
+                      content: '';
+
+                      top: 38px;
+                      bottom: 0;
+                      left: 14px;
+
+                      width: 2px;
+
+                      background-color: #ccc;
+                    }
+
+                    .left {
+                      display: block;
+                      position: absolute;
+
+                      top: 26px;
+                      left: 10px;
+
+                      width: 10px;
+                      height: 10px;
+
+                      border-radius: 50%;
+
+                      background-color: #ccc;
+                    }
+
+                    .content-inner {
+                      border-bottom: 1px solid $borderColor;
+                      margin-left: 35px;
+                      padding-top: $margin;
+                      padding-bottom: $margin;
+
+                      >.title {
+                        font-size: 16px;
+                        font-weight: normal;
+
+                        color: $titleColor;
+                      }
+
+                      .list-block {
+                        margin-top: $margin;
+                        font-size: 14px;
+
+                        color: $defaultFontColor;
+
+                        .list-item {
+
+                          & + .list-item {
+                            margin-top: 15px;
+                          }
+
+                          .item-content {
+                            display: table-row;
+
+                            .title {
+                              display: table-cell;
+
+                              width: 74px;
+
+                              color: $titleColor;
+                            }
+
+                            .text {
+                              display: table-cell;
+
+                              white-space: normal;
+                              word-break: break-all;
+                            }
+                          }
+                        }
+
+                      }
+                    }
+
+                  }
+                }
+              }
+            }
+            /* 项目经验 END */
+
+            /* demo */
+            .demo-wrap {
+              .list-inline {
+                overflow: hidden;
+                white-space: nowrap;
+
+                .list-item {
+                  width: 31.33%;
+
+                  margin-right: 15px;
+
+                  .item-content {
+                    .img-wrap {
+                      width: 100%;
+
+                      img {
+                        width: 100%;
+                        height: auto;
+                      }
+                    }
+
+                    .img-info {
+                      .title {
+                        overflow: hidden;
+
+                        margin-top: 10px;
+                        text-overflow: ellipsis;
+                        width: 100%;
+
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            /* demo END*/
+
+          }
+        }
+      }
+
+      .right {
+        display: inline-block;
+        float: left;
+
+        width: $widthRight;
+
+        .right-inner {
+
+          .panel {
+            padding-bottom: $margin;
+
+            .title-wrap {
+              border-bottom: 1px solid $borderColor;
+
+              height: 40px;
+              line-height: 40px;
+
+              color: $titleColor;
+
+              .title {
+                margin: 0;
+
+                font-weight: normal;
+                font-size: 16px;
+
+                .tag {
+                  padding-right: 10px;
+                  font-size: 12px;
+
+                  color: #666;
+                }
+
+              }
+
+              .title-after {
+                float: right;
+
+                height: 40px;
+                line-height: 40px;
+              }
+            }
+
+            & + .panel {
+              margin-top: $margin;
+            }
+
+            .panel-inner {
+              padding-top: $margin;
+
+              padding-right: $margin;
+            }
+
+            /* 插件列表样式 */
+            .plugin-list {
+              .list-item {
+
+                & + .list-item {
+                    margin-top: 15px;
+                }
+
+                &:last-child {
+                  .item-content {
+                    border-bottom: none;
+                  }
+                }
+
+                .item-content {
+                  border-bottom: 1px solid $borderColor;
+                  padding-bottom: 10px;
+
+                  .title {
+                    margin-bottom: 10px;
+                    font-size: 16px;
+
+                    color: $defaultFontColor;
+
+                    .icon {
+                      color: $tagColor;
+                    }
+                  }
+
+                  .text {
+                    padding-left: $margin;
+                    font-size: 12px;
+                    line-height: 1.6;
+
+                    color: $tagColor;
+
+                    .icon {
+                      margin-right: 5px;
+                      font-size: 12px;
+                    }
+                  }
+                }
+              }
+            }
+            /* 插件列表样式 END */
+
+          }
+
+        }
+
+      }
+    }
+  }
+}
+
+.list-2 {
+  list-style: none;
+
+  .list-item {
+    float: left;
+    width: 50%;
+  }
+
+  &:after {
+    display: block;
+
+    content: '';
+    clear: both;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+
+/* 辅助样式 */
+.border-red {
+  border: 1px solid red;
+}
+
+.border-yellow {
+  border: 1px solid yellow;
+}
+
+.min-height {
+  min-height: 100px;
+}

@@ -12,74 +12,78 @@
         <div class="pages">
             <!-- 头部 -->
             <header class="header ">
-                <div class="left">
-                    <div class="title-wrap">
-                        <span class="title">RESUME</span>
+                <div class="top-header">
+                    <div class="left">
+                        <div class="title-wrap">
+                            <span class="title">RESUME</span>
+                        </div>
                     </div>
-                </div>
-                <div class="center">
-                    <div class="center-inner ">
-                        <ul class="list-inline">
-                            <li class="list-item active">
-                                <a class="item-content" href="javascript:;">首页</a>
-                            </li>
-                            <li class="list-item">
-                                <a class="item-content" href="javascript:;">项目经验</a>
-                            </li>
-                            <li class="list-item">
-                                <a class="item-content" href="javascript:;">作品列表</a>
-                            </li>
-                        </ul>
+                    <div class="center">
+                        <div class="center-inner ">
+                            <ul class="list-inline">
+                                <li class="list-item active js-top-tab-list" data-target="#tab-home">
+                                    <a class="item-content" href="javascript:;">首页</a>
+                                </li>
+                                <li class="list-item js-top-tab-list"  data-target="#tab-experience">
+                                    <a class="item-content" href="javascript:;">项目经验</a>
+                                </li>
+                                <li class="list-item js-top-tab-list" data-target="#tab-demo">
+                                    <a class="item-content" href="javascript:;">作品列表</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="right ">
+                    <div class="right ">
 
+                    </div>
                 </div>
+
+                <!-- 导航部分 -->
+                <nav class="navbar ">
+                    <ul class="list-inline js-tab-list"  data-target="#tab-home">
+                        <li class="list-item active">
+                            <a class="item-content" href="javascript:;">个人信息</a>
+                        </li>
+                        <li class="list-item">
+                            <a class="item-content" href="javascript:;">专业技能</a>
+                        </li>
+                        <li class="list-item">
+                            <a class="item-content" href="javascript:;">教育经历</a>
+                        </li>
+                    </ul>
+
+                    <ul class="list-inline hide js-tab-list" data-target="#tab-experience">
+                        <li class="list-item active js-list-item" data-target="#panel-experience1">
+                            <a class="item-content" href="javascript:;">2016/4 - 至今</a>
+                        </li>
+                        <li class="list-item js-list-item" data-target="#panel-experience2">
+                            <a class="item-content" href="javascript:;">2015/9 - 2016/4</a>
+                        </li>
+                    </ul>
+
+                    <ul class="list-inline hide js-tab-list" data-target="#tab-demo">
+                        <li class="list-item active">
+                            <a class="item-content" href="javascript:;">PC</a>
+                        </li>
+                        <li class="list-item">
+                            <a class="item-content" href="javascript:;">WAP</a>
+                        </li>
+                        <li class="list-item">
+                            <a class="item-content" href="javascript:;">小游戏</a>
+                        </li>
+                        <li class="list-item">
+                            <a class="item-content" href="javascript:;">更多</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- 导航部分 END -->
             </header>
             <!-- 头部 END -->
 
-            <!-- 导航部分 -->
-            <nav class="navbar ">
-                <ul class="list-inline hide" >
-                    <li class="list-item active">
-                        <a class="item-content" href="javascript:;">个人信息</a>
-                    </li>
-                    <li class="list-item">
-                        <a class="item-content" href="javascript:;">专业技能</a>
-                    </li>
-                    <li class="list-item">
-                        <a class="item-content" href="javascript:;">教育经历</a>
-                    </li>
-                </ul>
 
-                <ul class="list-inline hide" >
-                    <li class="list-item active">
-                        <a class="item-content" href="javascript:;">2016/4 - 至今</a>
-                    </li>
-                    <li class="list-item">
-                        <a class="item-content" href="javascript:;">2015/9 - 2016/4</a>
-                    </li>
-                </ul>
-
-                <ul class="list-inline " >
-                    <li class="list-item active">
-                        <a class="item-content" href="javascript:;">PC</a>
-                    </li>
-                    <li class="list-item">
-                        <a class="item-content" href="javascript:;">WAP</a>
-                    </li>
-                    <li class="list-item">
-                        <a class="item-content" href="javascript:;">小游戏</a>
-                    </li>
-                    <li class="list-item">
-                        <a class="item-content" href="javascript:;">更多</a>
-                    </li>
-                </ul>
-            </nav>
-            <!-- 导航部分 END -->
 
             <!-- 主内容部分 -->
-            <main class="main">
+            <main class="main" id="js-main">
                 <!-- 左边部分 -->
                 <div class="left">
                     <div class="left-inner ">
@@ -153,7 +157,7 @@
                 <div class="center">
                     <div class="center-inner min-height ">
                         <!-- 首页 -->
-                        <div class="tab-home hide">
+                        <div class="tab-home" id="tab-home">
                             <div class="panel">
                                 <div class="title-wrap">
                                     <h1 class="title">个人信息</h1>
@@ -225,8 +229,8 @@
                         <!-- 首页 END -->
 
                         <!-- 项目经验 -->
-                        <div class="tab-experience hide">
-                            <div class="panel">
+                        <div class="tab-experience hide" id="tab-experience">
+                            <div class="panel" id="panel-experience1">
                                 <div class="title-wrap">
                                     <h1 class="title">
                                         <span class="tag">2016/4 - 至今</span>
@@ -368,7 +372,7 @@
                                 </div>
                             </div>
 
-                            <div class="panel">
+                            <div class="panel" id="panel-experience2">
                                 <div class="title-wrap">
                                     <h1 class="title">
                                         <span class="tag">2016/4 - 至今</span>
@@ -513,7 +517,7 @@
                         <!-- 项目经验 END -->
 
                         <!-- 作品列表 -->
-                        <div class="tab-demo">
+                        <div class="tab-demo hide" id="tab-demo">
                             <div class="panel">
                                 <div class="title-wrap">
                                     <h1 class="title">PC</h1>
@@ -674,5 +678,49 @@
         </div>
     </div>
 
+    <script src="jquery-1.11.3.min.js"></script>
+    <script>
+        $(function () {
+
+            // tab切换
+            $('.js-top-tab-list').on('click', function () {
+                var $this    = $(this),
+                    selector = $this.attr('data-target'),
+                    $target  = $(selector);
+
+                console.log($target)
+
+                if(!$this.hasClass('active')) {
+                    $this.addClass('active');
+                    $this.siblings('.js-top-tab-list').removeClass('active');
+
+                    $('.js-tab-list[data-target="' + selector + '"]').removeClass('hide').siblings('.js-tab-list').addClass('hide');
+                    $target.removeClass('hide');
+                    $this.siblings('.js-top-tab-list').each(function () {
+                        $($(this).attr('data-target')).addClass('hide');
+                    })
+
+                }
+            });
+
+            // 滚动
+            $('.js-list-item').on('click', function () {
+                var $this      = $(this),
+                    selector   = $this.attr('data-target'),
+                    $target    = $(selector),
+                    targetTop  = $target.offset().top,
+                    $main      = $('#js-main'),
+                    scrollTop  = $main.scrollTop(),
+                    mainHeight = $main.height();
+
+                console.log(mainHeight,scrollTop,targetTop,'iiiiiiiiiiiiiiii');
+
+                $this.addClass('active').siblings('.js-list-item').removeClass('active');
+
+                $main.animate({scrollTop:targetTop - 155});
+
+            })
+        });
+    </script>
 </body>
 </html>

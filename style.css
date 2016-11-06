@@ -14,6 +14,7 @@ html {
   font-size: 14px; }
 
 body {
+  overflow: hidden;
   height: 100%;
   line-height: 1.4;
   color: #333; }
@@ -62,6 +63,20 @@ body {
 .icon.icon-plugin:before {
   content: "\e719"; }
 
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 3px;
+  height: 5px; }
+
+::-webkit-scrollbar-track-piece {
+  background-color: #F4F7F8;
+  -webkit-border-radius: 5px; }
+
+::-webkit-scrollbar-thumb:vertical {
+  background-color: #ccc;
+  -webkit-border-radius: 5px; }
+
+/* 滚动条样式 END */
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -93,13 +108,13 @@ body {
   padding-top: 50px;
   padding-bottom: 50px;
   width: 100%;
-  min-height: 100%;
-  background-color: #F4C392; }
+  height: 100%;
+  background-color: rgba(154, 218, 233, 0.8); }
   .view .pages {
     position: relative;
     margin: 0 auto;
     width: 1200px;
-    min-height: 100%;
+    height: 100%;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
     background-color: #F4F7F8; }
     .view .pages:after {
@@ -107,53 +122,61 @@ body {
       clear: both;
       content: ''; }
     .view .pages .header {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      right: 0;
+      left: 0;
       width: 100%;
-      height: 50px;
+      height: 85px;
       background-color: #fff; }
-      .view .pages .header .left {
-        display: inline-block;
-        float: left;
-        width: 21%;
-        height: 100%; }
-        .view .pages .header .left .title-wrap {
+      .view .pages .header .top-header {
+        width: 100%;
+        height: 50px; }
+        .view .pages .header .top-header .left {
           display: inline-block;
-          margin-left: 20px;
-          margin-right: 20px;
-          padding-right: 15px;
-          height: 100%;
-          font-weight: bold;
-          line-height: 50px;
-          border-right: 1px solid #ebebeb; }
-          .view .pages .header .left .title-wrap .title {
-            border-radius: 5px;
-            padding: 5px;
-            color: #fff;
-            background-color: #36B6E9; }
-      .view .pages .header .center {
-        display: inline-block;
-        float: left;
-        width: 60%;
-        height: 100%; }
-        .view .pages .header .center .center-inner {
-          margin: 0 20px;
-          height: 100%;
-          border-left: 1px solid #ebebeb;
-          border-right: 1px solid #ebebeb;
-          text-align: center; }
-          .view .pages .header .center .center-inner .list-inline .list-item .item-content {
-            padding-left: 20px;
-            padding-right: 20px;
-            height: 50px;
+          float: left;
+          width: 21%;
+          height: 100%; }
+          .view .pages .header .top-header .left .title-wrap {
+            display: inline-block;
+            margin-left: 20px;
+            margin-right: 20px;
+            padding-right: 15px;
+            height: 100%;
+            font-weight: bold;
             line-height: 50px;
-            font-size: 16px;
-            color: #121212; }
-          .view .pages .header .center .center-inner .list-inline .list-item.active .item-content, .view .pages .header .center .center-inner .list-inline .list-item:hover .item-content {
-            color: #36B6E9; }
-      .view .pages .header .right {
-        display: inline-block;
-        float: left;
-        width: 19%;
-        height: 100%; }
+            border-right: 1px solid #ebebeb; }
+            .view .pages .header .top-header .left .title-wrap .title {
+              border-radius: 5px;
+              padding: 5px;
+              color: #fff;
+              background-color: #36B6E9; }
+        .view .pages .header .top-header .center {
+          display: inline-block;
+          float: left;
+          width: 60%;
+          height: 100%; }
+          .view .pages .header .top-header .center .center-inner {
+            margin: 0 20px;
+            height: 100%;
+            border-left: 1px solid #ebebeb;
+            border-right: 1px solid #ebebeb;
+            text-align: center; }
+            .view .pages .header .top-header .center .center-inner .list-inline .list-item .item-content {
+              padding-left: 20px;
+              padding-right: 20px;
+              height: 50px;
+              line-height: 50px;
+              font-size: 16px;
+              color: #121212; }
+            .view .pages .header .top-header .center .center-inner .list-inline .list-item.active .item-content, .view .pages .header .top-header .center .center-inner .list-inline .list-item:hover .item-content {
+              color: #36B6E9; }
+        .view .pages .header .top-header .right {
+          display: inline-block;
+          float: left;
+          width: 19%;
+          height: 100%; }
     .view .pages .navbar {
       width: 100%;
       height: 35px;
@@ -182,16 +205,19 @@ body {
           .view .pages .navbar .list-inline .list-item:hover {
             color: #333; }
     .view .pages .main {
-      margin-top: 20px;
+      overflow-y: auto;
+      padding-top: 105px;
       padding-bottom: 20px;
-      min-height: 500px; }
+      height: 100%; }
       .view .pages .main:after {
         display: block;
         clear: both;
         content: ''; }
       .view .pages .main .left {
+        position: absolute;
+        top: 105px;
+        left: 0;
         display: inline-block;
-        float: left;
         width: 21%; }
         .view .pages .main .left .left-inner {
           margin-left: 20px;
@@ -274,9 +300,10 @@ body {
                   .view .pages .main .left .left-inner .list-wrap .list-block .list-item .item-content .single-line .link:hover {
                     color: #333; }
       .view .pages .main .center {
-        display: inline-block;
-        float: left;
-        width: 60%; }
+        margin-left: 21%;
+        margin-right: auto;
+        width: 60%;
+        height: 100%; }
         .view .pages .main .center .center-inner {
           margin: 0 20px; }
           .view .pages .main .center .center-inner .panel {
@@ -409,11 +436,13 @@ body {
                   text-overflow: ellipsis;
                   width: 100%; }
       .view .pages .main .right {
-        display: inline-block;
-        float: left;
+        position: absolute;
+        top: 105px;
+        right: 0;
         width: 19%; }
         .view .pages .main .right .right-inner .panel {
           padding-bottom: 20px;
+          padding-right: 20px;
           /* 插件列表样式 */
           /* 插件列表样式 END */ }
           .view .pages .main .right .right-inner .panel .title-wrap {
@@ -436,8 +465,7 @@ body {
           .view .pages .main .right .right-inner .panel + .panel {
             margin-top: 20px; }
           .view .pages .main .right .right-inner .panel .panel-inner {
-            padding-top: 20px;
-            padding-right: 20px; }
+            padding-top: 20px; }
           .view .pages .main .right .right-inner .panel .plugin-list .list-item + .list-item {
             margin-top: 15px; }
           .view .pages .main .right .right-inner .panel .plugin-list .list-item:last-child .item-content {

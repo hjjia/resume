@@ -41,15 +41,15 @@
                 <!-- 导航部分 -->
                 <nav class="navbar ">
                     <ul class="list-inline js-tab-list"  data-target="#tab-home">
-                        <li class="list-item active">
+                        <li class="list-item active js-list-item" data-target="#panel-home1">
                             <a class="item-content" href="javascript:;">个人信息</a>
                         </li>
-                        <li class="list-item">
+                        <li class="list-item js-list-item" data-target="#panel-home2">
                             <a class="item-content" href="javascript:;">专业技能</a>
                         </li>
-                        <li class="list-item">
+                        <!--<li class="list-item">
                             <a class="item-content" href="javascript:;">教育经历</a>
-                        </li>
+                        </li>-->
                     </ul>
 
                     <ul class="list-inline hide js-tab-list" data-target="#tab-experience">
@@ -62,16 +62,16 @@
                     </ul>
 
                     <ul class="list-inline hide js-tab-list" data-target="#tab-demo">
-                        <li class="list-item active">
+                        <li class="list-item active js-list-item">
                             <a class="item-content" href="javascript:;">PC</a>
                         </li>
-                        <li class="list-item">
+                        <li class="list-item js-list-item">
                             <a class="item-content" href="javascript:;">WAP</a>
                         </li>
-                        <li class="list-item">
+                        <li class="list-item js-list-item">
                             <a class="item-content" href="javascript:;">小游戏</a>
                         </li>
-                        <li class="list-item">
+                        <li class="list-item js-list-item">
                             <a class="item-content" href="javascript:;">更多</a>
                         </li>
                     </ul>
@@ -97,13 +97,30 @@
                                 <div class="name">黄佳佳</div>
                             </div>
 
+                            <div class="list-wrap">
+                                <ul class="list-block">
+                                    <li class="list-item">
+                                        <div class="item-content ">
+                                            <div class="single-line">
+                                                <span class="icon icon-tel"></span>
+                                                <a class="link" href="javascript:;">188 0664 8220</a>
+                                            </div>
+                                            <div class="single-line">
+                                                <span class="icon icon-email"></span>
+                                                <a class="link" href="javascript:;">2459870745@qq.com</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+<!--
                             <div class="btn-wrap">
                                 <a class="btn btn-primary active">Follow</a>
                                 <a class="btn btn-primary">Connect</a>
-                            </div>
+                            </div>-->
                         </div>
 
-                        <div class="list-wrap">
+                      <!--  <div class="list-wrap">
                             <ul class="list-2">
                                 <li class="list-item">
                                     <div class="item-content">
@@ -118,7 +135,7 @@
                                     </div>
                                 </li>
                             </ul>
-                        </div>
+                        </div>-->
 
                         <div class="list-wrap">
                             <ul class="list-block">
@@ -158,7 +175,7 @@
                     <div class="center-inner min-height ">
                         <!-- 首页 -->
                         <div class="tab-home" id="tab-home">
-                            <div class="panel">
+                            <div class="panel" id="panel-home1">
                                 <div class="title-wrap">
                                     <h1 class="title">个人信息</h1>
                                     <div class="title-after">
@@ -167,11 +184,49 @@
                                 </div>
 
                                 <div class="panel-inner">
+                                    <div class="basic-wrap">
+                                        <ul class="flex-avg-list">
+                                            <li class="flex-item">
+                                                <span class="icon icon-graduationhat"></span>
+                                                <div class="detail">
+                                                    <p class="name">学历</p>
+                                                    <p class="text">本科</p>
+                                                </div>
+                                            </li>
+                                            <li class="flex-item">
+                                                <span class="icon icon-user"></span>
+                                                <div class="detail">
+                                                    <p class="name">年龄</p>
+                                                    <p class="text">23</p>
+                                                </div>
+                                            </li>
+                                            <li class="flex-item">
+                                                <span class="icon icon-mark"></span>
+                                                <div class="detail">
+                                                    <p class="name">坐标</p>
+                                                    <p class="text">深圳</p>
+                                                </div>
+                                            </li>
+                                            <li class="flex-item">
+                                                <span class="icon icon-edit"></span>
+                                                <div class="detail">
+                                                    <p class="name">状态</p>
+                                                    <p class="text">在职</p>
+                                                </div>
+                                            </li>
+                                        </ul>
 
+                                        <div class="detail-wrap">
+                                            <div class="text">
+                                                2015年毕业于青海大学，专业是计算机科学与技术，目前就职于深圳伍陆信息科技有限公司。工作之余喜欢钻研web前端技术，对精美的网页尤为敬佩和喜爱,
+                                                日新月异的web前沿技术和层出不穷的框架让我既兴奋又期待,研究大神漂亮的代码对我而言是一种极致享受
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="panel">
+                            <div class="panel" id="panel-home2">
                                 <div class="title-wrap">
                                     <h1 class="title">专业技能</h1>
                                 </div>

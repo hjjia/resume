@@ -30,7 +30,7 @@ ul {
   font-family: 'FZXH';
   src: url("fonts/FZXH.ttf"); }
 body {
-  font-family: 'FZXH'; }
+  font-family: Arial,"微软雅黑",sans-serif; }
 
 @font-face {
   font-family: "iconfont";
@@ -240,7 +240,7 @@ body {
             font-size: 12px; }
           .view .pages .main .left .left-inner .img-panel {
             text-align: center;
-            width: 140px;
+            width: 146px;
             margin: 0 auto;
             padding-bottom: 20px; }
             .view .pages .main .left .left-inner .img-panel .img-wrap {
@@ -467,6 +467,8 @@ body {
               width: 12px;
               height: 12px;
               background-color: #fff; }
+            .view .pages .main .center .center-inner .panel .project-wrap > .list-block > .list-item.last > .item-content:after {
+              display: none; }
             .view .pages .main .center .center-inner .panel .project-wrap > .list-block > .list-item:last-child > .item-content .content-inner {
               border-bottom: none; }
             .view .pages .main .center .center-inner .panel .project-wrap > .list-block > .list-item > .item-content {
